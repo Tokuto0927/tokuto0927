@@ -42,7 +42,7 @@ public class Method {
 	}
 
 	// Q4：引数として小数を2つ渡すと、その引数2つを乗算した値を返すメソッド（関数）を作成してください。
-//	     ※ただしメソッド名はQ3のメソッド名と同じにしてください。
+	//	     ※ただしメソッド名はQ3のメソッド名と同じにしてください。
 	public static double multiply(double num1, double num2) {
 	    return num1 * num2;
 	}
