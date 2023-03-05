@@ -8,12 +8,16 @@ public class Person{
 	static int count = 0;
 
 	Person(String name, int age, double height, double weight){
-	this.name = name;
-	this.age = age;
-	this.height = height;
-	this.weight = weight;
-	count++;
+		if (name == null) {
+			throw new IllegalArgumentException("名前がnullです");
+		}
+		this.name = name;
+		this.age = age;
+		this.height = height;
+		this.weight = weight;
+		count++;
 	}
+
 
 	public double bmi(){
 	return this.weight / this.height / this.height;
