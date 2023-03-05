@@ -1,9 +1,10 @@
 package adventure;
 
 public class Player extends Character {
-    public Player(String name) {
-        super(name);
-    }
+	public Player(String name) {
+	    super(name != null ? name : "");
+	}
+
 
     public void greet() {
         System.out.println("こんにちは " + this.name + " さん");
@@ -12,4 +13,5 @@ public class Player extends Character {
     public void adventure() {
         System.out.println("さあ冒険に出かけよう！");
     }
+    
 }
