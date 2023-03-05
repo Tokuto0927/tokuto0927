@@ -14,12 +14,21 @@ package field;
 		}
 
 		public void buy(Car car) {
-			car.setOwner(this.getFullName());
-			System.out.println(this.getFullName() + "が購入しました。");
+			if(car != null) {
+				car.setOwner(this.getFullName());
+				System.out.println(this.getFullName() + "が購入しました。");
+			} else {
+				throw new IllegalArgumentException("Car cannot be null.");
+			}
 		}
 
 		public void buy(Bicycle bicycle) {
-			bicycle.setOwner(this.getFullName());
-			System.out.println(this.getFullName() + "が購入しました。");
+			if(bicycle != null) {
+				bicycle.setOwner(this.getFullName());
+				System.out.println(this.getFullName() + "が購入しました。");
+			} else {
+				throw new IllegalArgumentException("Bicycle cannot be null.");
+			}
 		}
+
 	}

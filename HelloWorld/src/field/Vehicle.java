@@ -8,7 +8,14 @@ public class Vehicle {
 		return owner;
 	}
 	public void setOwner(String owner) {
-		this.owner = owner;
+		if(owner != null) {
+			this.owner = owner;
+		} else {
+			throw new IllegalArgumentException("Owner cannot be null.");
+		}
 	}
+
+	
+	
 
 }
