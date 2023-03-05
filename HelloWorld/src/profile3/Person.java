@@ -8,6 +8,9 @@ public class Person{
     public double height, weight;
 
     Person(String firstName, String lastName, int age, double height, double weight){
+        if (firstName == null || lastName == null) {
+            throw new IllegalArgumentException("名前がnullです");
+        }
         Person.count++;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -15,6 +18,7 @@ public class Person{
         this.height = height;
         this.weight = weight;
     }
+
 
     public String fullName(){
         return this.firstName + " " + this.lastName;
