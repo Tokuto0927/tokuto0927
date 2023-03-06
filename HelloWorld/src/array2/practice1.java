@@ -38,7 +38,7 @@ public class practice1 {
 	            System.out.println(alphabets[i]);
 	        }
 
-	        // cotinue文を使用してi以外を表示
+	        // cotinue文を使用して i以外を表示
 	        for (int i = 0; i < 10; i++) {
 	            if (alphabets[i].equals("i")) {
 	                continue;
