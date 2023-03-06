@@ -39,7 +39,7 @@ public class practice1 {
 	        }
 
 	        // cotinue文を使用してi以外を表示
-	        for (int i = 6; i < 10; i++) {
+	        for (int i = 0; i < 10; i++) {
 	            if (alphabets[i].equals("i")) {
 	                continue;
 	            }
