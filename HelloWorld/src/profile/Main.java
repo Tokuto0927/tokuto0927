@@ -2,6 +2,9 @@ package profile;
 
 public class Main {
     public static void main(String[] args) {
+    	
+    	
+    	//問題5：Main.javaの引数にweightの60を入れてください
         Person person1 = new Person("稲垣徳人", 24, 1.79, 60.0);
 
         if (person1 != null) {
@@ -15,3 +18,4 @@ public class Main {
         }
     }
 }
+	
