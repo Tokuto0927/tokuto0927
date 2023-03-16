@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>新規ユーザー登録</title>
-<link rel="stylesheet" href="../css/ress.css">
-<link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="../../css/ress.css">
+<link rel="stylesheet" href="../../css/login.css">
 </head>
 <body>
 

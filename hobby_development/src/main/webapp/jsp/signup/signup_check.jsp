@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>新規ユーザー登録確認</title>
-<link rel="stylesheet" href="../css/ress.css">
-<link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="../../css/ress.css">
+<link rel="stylesheet" href="../../css/login.css">
 </head>
 <body>
 
@@ -25,42 +25,48 @@
             <% 
             try {
                 // JDBCドライバを読み込み
-                Class.forName("com.mysql.jdbc.Driver");
-
+                ("com.mysql.cj.jdbc.Driver").newInstance();
                 // データベースに接続
                 String url = "jdbc:mysql://localhost:8003/phpMyAdmin5"; 
                 String user = "root"; 
                 String pass = "root"; 
                 Connection conn = DriverManager.getConnection(url, user, pass);
 
-                // SQL文を準備
-                String sql = "INSERT INTO users (username, password) VALUES (?, ?)";
-                PreparedStatement pstmt = conn.prepareStatement(sql);
-                pstmt.setString(1, username);
-                pstmt.setString(2, password);
+                // 現在の最大のidを取得
+                String sqlMaxId = "SELECT MAX(id) AS max_id FROM users";
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sqlMaxId);
+                int id = 1;
+                if(rs.next()){
+                    id = rs.getInt("max_id") + 1;
+                }
 
-                // SQLを実行
-                int result = pstmt.executeUpdate();
+                // SQL文を準備
+                String sql = "INSERT INTO customer (id, username, password) VALUES (?, ? ,?)";
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+                pstmt.setInt(1, id);
+                pstmt.setString(2, username);
+                pstmt.setString(3, password);
 
                 // 実行結果を判定
-                if (result == 1) {
+                int result = pstmt.executeUpdate();
+                if(result > 0){
                     out.println("<p>ユーザー登録が完了しました。</p>");
-                } else {
-                    out.println("<p>ユーザー登録に失敗しました。</p>");
                 }
 
                 // データベースを切断
+                rs.close();
+                stmt.close();
                 pstmt.close();
                 conn.close();
 
-            } catch (ClassNotFoundException e) {
-                out.println("<p>ClassNotFoundException: " + e.getMessage() + "</p>");
             } catch (SQLException e) {
-                out.println("<p>SQLException: " + e.getMessage() + "</p>");
+                out.println("<p>ユーザー登録に失敗しました。</p>");
             }
+
             %>
 
-            <p><a href="login.jsp" class="link">ログインページへ戻る</a></p>
+            <p><a href="../login/login.jsp" class="link">ログインページへ戻る</a></p>
 
         </div><!-- /wrapper -->
 
