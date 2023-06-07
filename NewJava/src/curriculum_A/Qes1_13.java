@@ -3,7 +3,7 @@ package curriculum_A;
 public class Qes1_13 {
 
 	public static void main(String[] args) {
-		// TODO  1 　ローカル変数の宣言
+		// TODO  1 ローカル変数の宣言
 		byte glasses; //バイト型
 		short age; //短整数型
 		int salary; //整数型
