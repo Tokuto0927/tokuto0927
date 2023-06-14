@@ -1,6 +1,6 @@
 package curriculum_B;
 
-public class Qes5{
+public class Qes5 {
 
     public static void main(String[] args) {
         int rows = 20;
@@ -13,14 +13,17 @@ public class Qes5{
         for (int j = 0; j < columns; j++) {
             for (int i = 0; i < rows; i++)  {
                 int result = (i + 1) * (j + 1);
-                table[i][j] = String.format("%03d*%03d=%03d", (i + 1) , (j + 1), result);
+                table[i][j] = String.format("%03d * %03d = %03d", (i + 1) , (j + 1), result);
             }
         }
 
         // 表の内容を表示
         for (int j = 0; j < columns; j++) {
             for (int i = 0; i < rows; i++) {
-                System.out.print(table[i][j] + " || ");
+                System.out.print(table[i][j]);
+                if (i != rows - 1) {
+                    System.out.print(" || ");
+                }
             }
             System.out.println();
         }

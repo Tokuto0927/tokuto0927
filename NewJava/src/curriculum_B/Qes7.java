@@ -1,5 +1,6 @@
 package curriculum_B;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Qes7{
@@ -29,6 +30,8 @@ public class Qes7{
             
             System.out.print("社会の点数: ");
             socialScores[i] = scanner.nextInt();
+            
+            System.out.println(); // 改行
         }
         
         // 科目ごとの平均点を計算
@@ -38,11 +41,13 @@ public class Qes7{
         double socialAverage = calculateAverage(socialScores);
         
         // 生徒ごとの科目平均点と全体の科目平均点を出力
+        DecimalFormat decimalFormat = new DecimalFormat("#.00");
         for (int i = 0; i < numStudents; i++) {
             double studentAverage = (englishScores[i] + mathScores[i] + scienceScores[i] + socialScores[i]) / 4.0;
             System.out.println("生徒" + (i+1) + "の科目平均点: " + studentAverage);
         }
         
+        System.out.println(); // 改行
         System.out.println("全体の英語の平均点: " + englishAverage);
         System.out.println("全体の数学の平均点: " + mathAverage);
         System.out.println("全体の理科の平均点: " + scienceAverage);
