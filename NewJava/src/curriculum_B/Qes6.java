@@ -22,18 +22,14 @@ public class Qes6 {
                 case "パソコン":
                 case "冷蔵庫":
                     // パソコンと冷蔵庫の場合は、0から11までのランダムな値が残り台数となる
-                	int remainingCount = random.nextInt(12);
+                    int remainingCount = random.nextInt(12);
                     System.out.println(product + "の残り台数は" + remainingCount + "台です");
                     break;
-                case "テレビ":
-                    // テレビの場合は、ディスプレイの個数をランダムに決定し、テレビの残り台数は最大個数からディスプレイの個数を引いた値となる
+                case "テレビ","ディスプレイ":
+                    // テレビとディスプレイの場合は、ディスプレイの個数をランダムに決定し、テレビとディスプレイの残り台数は最大個数からディスプレイの個数を引いた値となる
                     displayCount = random.nextInt(12);
                     int remainingTVCount = maxCount - displayCount;
-                    System.out.println("テレビの残り台数は" + remainingTVCount + "台です");
-                    break;
-                case "ディスプレイ":
-                    // ディスプレイの場合は、既に処理されたテレビの残り台数となる
-                    System.out.println("ディスプレイの残り台数は" + displayCount + "台です");
+                    System.out.println(product + "の残り台数は" + remainingTVCount + "台です");
                     break;
                 case "扇風機":
                 case "洗濯機":

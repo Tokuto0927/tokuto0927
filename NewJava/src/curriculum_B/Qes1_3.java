@@ -4,8 +4,11 @@ import java.util.Scanner;
 
 public class Qes1_3 {
     public static void main(String[] args) {
+    	
         Scanner scanner = new Scanner(System.in);
+        
         System.out.print("ユーザー名を入力してください: ");
+        
         String userName = scanner.nextLine();
 
         if (userName == null || userName.length() <= 0) {
@@ -19,11 +22,13 @@ public class Qes1_3 {
         }
 
         String[] handNames = {"グー", "チョキ", "パー"};
+        
         int totalAttempts = 1;
         int drawCount = 0;
 
         while (true) {
             System.out.print("自分の手を選んでください（0:グー, 1:チョキ, 2:パー）: ");
+            
             int userHand = scanner.nextInt();
             scanner.nextLine();  // 改行読み取り
 
@@ -46,6 +51,7 @@ public class Qes1_3 {
                 System.out.println("やるやん。次は俺にリベンジさせて");
                 break;
             } else {
+            	
                 if (userHand == 0) {
                     System.out.println("俺の勝ち！負けは次につながるチャンスです！ネバーギブアップ！");
                 } else if (userHand == 1) {

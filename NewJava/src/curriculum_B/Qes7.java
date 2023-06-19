@@ -42,6 +42,7 @@ public class Qes7{
         
         // 生徒ごとの科目平均点と全体の科目平均点を出力
         DecimalFormat decimalFormat = new DecimalFormat("#.00");
+        
         for (int i = 0; i < numStudents; i++) {
             double studentAverage = (englishScores[i] + mathScores[i] + scienceScores[i] + socialScores[i]) / 4.0;
             System.out.println("生徒" + (i+1) + "の科目平均点: " + studentAverage);
@@ -56,10 +57,13 @@ public class Qes7{
     
     // 平均値を計算するメソッド
     public static double calculateAverage(int[] scores) {
+    	
         int sum = 0;
+        
         for (int score : scores) {
             sum += score;
         }
+        
         return sum / (double) scores.length;
     }
 }
